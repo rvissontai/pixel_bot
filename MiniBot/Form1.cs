@@ -9,6 +9,7 @@ namespace MiniBot
     {
         private t.Timer timerMana;
         private t.Timer timerHealth;
+        private ConfigurationModel configurationModel;
 
         public Form1()
         {
@@ -19,16 +20,31 @@ namespace MiniBot
             InitializeTimers();
 
             StartTimers();
+
+            LoadConfiguration();
         }
 
         private void TimerMana_Elapsed(object sender, t.ElapsedEventArgs e)
         {
-            Invoke(new Action(() => { Mana.UsePotionOrWait(); }));
-        }
-
+            try
+            {
+                Invoke(new Action(() => { Mana.UsePotionOrWait(); }));
+            }
+            catch
+            {
+            }
+            
+        }      
+        
         private void TimerHealth_Elapsed(object sender, t.ElapsedEventArgs e)
         {
-            Invoke(new Action(() => { Health.UsePotionOrWait(); }));
+            try
+            {
+                Invoke(new Action(() => { Health.UsePotionOrWait(); }));
+            }
+            catch
+            {
+            }   
         }
 
         private void InitializeTimers()
@@ -46,6 +62,35 @@ namespace MiniBot
         {
             timerMana.Start();
             timerHealth.Start();
+        }
+
+        private void LoadConfiguration()
+        {
+            configurationModel = Configuration.Load();
+
+            if (configurationModel == null)
+                return;
+
+            if (!string.IsNullOrWhiteSpace(configurationModel.LifeHotKey))
+                cbLifeHotkey.SelectedItem = configurationModel.LifeHotKey;
+
+            if (!string.IsNullOrWhiteSpace(configurationModel.ManaHotKey))
+                cbManaHotKey.SelectedItem = configurationModel.ManaHotKey;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbLifeHotkey_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var model = new ConfigurationModel();
+
+            model.LifeHotKey = cbLifeHotkey.SelectedItem.ToString();
+            //model.ManaHotKey = cbManaHotKey.SelectedItem.ToString();
+
+            Configuration.Save(model);
         }
     }
 }
