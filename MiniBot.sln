@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniBot", "MiniBot\MiniBot.csproj", "{78B51057-3C0F-40E9-8526-E10BFC32E216}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniBot.Util", "Util\MiniBot.Util.csproj", "{6FA6BA41-E9CB-4DA9-9543-8637980B5335}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniBot.Core", "MiniBot.Core\MiniBot.Core.csproj", "{FF873FB1-5E45-4AD9-B767-1805AE94C717}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{78B51057-3C0F-40E9-8526-E10BFC32E216}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78B51057-3C0F-40E9-8526-E10BFC32E216}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78B51057-3C0F-40E9-8526-E10BFC32E216}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78B51057-3C0F-40E9-8526-E10BFC32E216}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FA6BA41-E9CB-4DA9-9543-8637980B5335}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FA6BA41-E9CB-4DA9-9543-8637980B5335}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FA6BA41-E9CB-4DA9-9543-8637980B5335}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FA6BA41-E9CB-4DA9-9543-8637980B5335}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF873FB1-5E45-4AD9-B767-1805AE94C717}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF873FB1-5E45-4AD9-B767-1805AE94C717}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF873FB1-5E45-4AD9-B767-1805AE94C717}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF873FB1-5E45-4AD9-B767-1805AE94C717}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {76470A04-C8BE-4392-9916-108975FC346B}
+	EndGlobalSection
+EndGlobal
