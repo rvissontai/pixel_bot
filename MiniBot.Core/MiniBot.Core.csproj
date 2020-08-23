@@ -79,6 +79,7 @@
     <Compile Include="Configuration.cs" />
     <Compile Include="ConfigurationModel.cs" />
     <Compile Include="Health.cs" />
+    <Compile Include="HealthBar.cs" />
     <Compile Include="Mana.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -68,14 +68,14 @@ namespace MiniBot
         {
             configurationModel = Configuration.Load();
 
-            if (configurationModel == null)
-                return;
-
             if (!string.IsNullOrWhiteSpace(configurationModel.LifeHotKey))
                 cbLifeHotkey.SelectedItem = configurationModel.LifeHotKey;
 
             if (!string.IsNullOrWhiteSpace(configurationModel.ManaHotKey))
                 cbManaHotKey.SelectedItem = configurationModel.ManaHotKey;
+
+            nupLifePercent.Value = configurationModel.UseLifeAtPercent;
+            nupManaPercent.Value = configurationModel.UseManaAtPercent;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -85,12 +85,18 @@ namespace MiniBot
 
         private void cbLifeHotkey_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var model = new ConfigurationModel();
+            
+        }
 
-            model.LifeHotKey = cbLifeHotkey.SelectedItem.ToString();
-            //model.ManaHotKey = cbManaHotKey.SelectedItem.ToString();
+        private void btnSaveConfig_Click(object sender, EventArgs e)
+        {
+            configurationModel.LifeHotKey = cbLifeHotkey.SelectedItem.ToString();
+            configurationModel.ManaHotKey = cbManaHotKey.SelectedItem.ToString();
 
-            Configuration.Save(model);
+            configurationModel.UseLifeAtPercent = (short)nupLifePercent.Value;
+            configurationModel.UseManaAtPercent = (short)nupManaPercent.Value;
+
+            Configuration.Save();
         }
     }
 }

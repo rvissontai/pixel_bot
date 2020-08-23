@@ -16,7 +16,7 @@ namespace MiniBot.Core
                 return;
 
             if (MustUsePotion())
-                SendKeys.Send("{F2}");
+                SendKeys.Send("{" + Configuration.Settings.LifeHotKey + "}");
         }
 
         private static bool MustUsePotion()
@@ -28,5 +28,7 @@ namespace MiniBot.Core
 
             return true;
         }
+
+
     }
 }
