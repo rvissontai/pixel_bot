@@ -1,5 +1,8 @@
 ﻿using System.ComponentModel;
 using System.IO;
+using System.Threading;
+using System.Windows.Forms;
+using MiniBot.Infra.CrossCutting;
 using Newtonsoft.Json;
 
 namespace MiniBot.Core
@@ -9,6 +12,8 @@ namespace MiniBot.Core
         private static string ConfigFile = Path.Combine(Directory.GetCurrentDirectory(), "config.json");
 
         private static ConfigurationModel Instance {get;set; }
+
+        private static Form MainForm { get; set; }
 
         private Configuration()
         {
@@ -32,8 +37,10 @@ namespace MiniBot.Core
                 sw.Write(JsonConvert.SerializeObject(Instance, Formatting.Indented));
         }
 
-        public static ConfigurationModel Load()
+        public static ConfigurationModel Load(Form mainForm)
         {
+            MainForm = mainForm;
+
             if (!File.Exists(ConfigFile))
             {
                 Instance = new ConfigurationModel();
@@ -44,6 +51,16 @@ namespace MiniBot.Core
                 Instance = JsonConvert.DeserializeObject<ConfigurationModel>(sr.ReadToEnd());
 
             return Instance;
+        }
+
+        public static void FindBarsPotision()
+        {
+            TibiaClient.SetForeground();
+            Thread.Sleep(250);
+
+            var screenShot = Screenshot.FullDesktop();
+
+            HealthBar.Find(screenShot);
         }
     }
 }

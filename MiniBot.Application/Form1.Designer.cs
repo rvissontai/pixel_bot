@@ -41,27 +41,28 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnSaveConfig = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cbLifeActive = new System.Windows.Forms.CheckBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.cbManaActive = new System.Windows.Forms.CheckBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.lbCliente = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label8 = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cbManaActive = new System.Windows.Forms.CheckBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cbLifeActive = new System.Windows.Forms.CheckBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lbCliente = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pcLife)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupLifePercent)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupManaPercent)).BeginInit();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // pcLife
@@ -218,72 +219,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Settings";
             // 
-            // cbLifeActive
-            // 
-            this.cbLifeActive.AutoSize = true;
-            this.cbLifeActive.Location = new System.Drawing.Point(197, 33);
-            this.cbLifeActive.Name = "cbLifeActive";
-            this.cbLifeActive.Size = new System.Drawing.Size(15, 14);
-            this.cbLifeActive.TabIndex = 12;
-            this.cbLifeActive.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.cbLifeActive.UseVisualStyleBackColor = true;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(194, 14);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(37, 13);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Active";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(194, 66);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(37, 13);
-            this.label6.TabIndex = 15;
-            this.label6.Text = "Active";
-            // 
-            // cbManaActive
-            // 
-            this.cbManaActive.AutoSize = true;
-            this.cbManaActive.Location = new System.Drawing.Point(197, 85);
-            this.cbManaActive.Name = "cbManaActive";
-            this.cbManaActive.Size = new System.Drawing.Size(15, 14);
-            this.cbManaActive.TabIndex = 14;
-            this.cbManaActive.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.cbManaActive.UseVisualStyleBackColor = true;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.lbCliente);
-            this.groupBox2.Location = new System.Drawing.Point(257, 12);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(237, 245);
-            this.groupBox2.TabIndex = 13;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Info";
-            // 
-            // lbCliente
-            // 
-            this.lbCliente.AutoSize = true;
-            this.lbCliente.Location = new System.Drawing.Point(7, 20);
-            this.lbCliente.Name = "lbCliente";
-            this.lbCliente.Size = new System.Drawing.Size(36, 13);
-            this.lbCliente.TabIndex = 0;
-            this.lbCliente.Text = "Client:";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(6, 124);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(34, 34);
-            this.pictureBox2.TabIndex = 16;
-            this.pictureBox2.TabStop = false;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -350,6 +285,83 @@
             this.label9.TabIndex = 18;
             this.label9.Text = "Food HotKey";
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(6, 124);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(34, 34);
+            this.pictureBox2.TabIndex = 16;
+            this.pictureBox2.TabStop = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(194, 66);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(37, 13);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "Active";
+            // 
+            // cbManaActive
+            // 
+            this.cbManaActive.AutoSize = true;
+            this.cbManaActive.Location = new System.Drawing.Point(197, 85);
+            this.cbManaActive.Name = "cbManaActive";
+            this.cbManaActive.Size = new System.Drawing.Size(15, 14);
+            this.cbManaActive.TabIndex = 14;
+            this.cbManaActive.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.cbManaActive.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(194, 14);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(37, 13);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Active";
+            // 
+            // cbLifeActive
+            // 
+            this.cbLifeActive.AutoSize = true;
+            this.cbLifeActive.Location = new System.Drawing.Point(197, 33);
+            this.cbLifeActive.Name = "cbLifeActive";
+            this.cbLifeActive.Size = new System.Drawing.Size(15, 14);
+            this.cbLifeActive.TabIndex = 12;
+            this.cbLifeActive.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.cbLifeActive.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.lbCliente);
+            this.groupBox2.Location = new System.Drawing.Point(257, 12);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(237, 245);
+            this.groupBox2.TabIndex = 13;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Info";
+            // 
+            // lbCliente
+            // 
+            this.lbCliente.AutoSize = true;
+            this.lbCliente.Location = new System.Drawing.Point(7, 20);
+            this.lbCliente.Name = "lbCliente";
+            this.lbCliente.Size = new System.Drawing.Size(36, 13);
+            this.lbCliente.TabIndex = 0;
+            this.lbCliente.Text = "Client:";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(77, 56);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -370,10 +382,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.nupManaPercent)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -405,6 +417,7 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button button1;
     }
 }
 

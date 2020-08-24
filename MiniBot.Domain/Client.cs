@@ -16,7 +16,7 @@ namespace MiniBot.Core
 
         public static bool IsFocused()
         {
-            var activatedHandle = Window.GetForegroundWindow();
+            var activatedHandle = User32.GetForegroundWindow();
 
             // No window is currently activated
             if (activatedHandle == IntPtr.Zero)
@@ -24,9 +24,15 @@ namespace MiniBot.Core
 
             int activeProcId;
 
-            Window.GetWindowThreadProcessId(activatedHandle, out activeProcId);
+            User32.GetWindowThreadProcessId(activatedHandle, out activeProcId);
 
             return activeProcId == TibiaProcess.Id;
+        }
+
+        public static void SetForeground()
+        {
+            User32.SetForegroundWindow(TibiaProcess.MainWindowHandle);
+            User32.SetActiveWindow(TibiaProcess.MainWindowHandle);
         }
     }
 }

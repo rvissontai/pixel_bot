@@ -1,4 +1,5 @@
 ﻿using MiniBot.Core;
+using MiniBot.Infra.CrossCutting;
 using System;
 using System.Windows.Forms;
 using t = System.Timers;
@@ -66,7 +67,7 @@ namespace MiniBot
 
         private void LoadConfiguration()
         {
-            configurationModel = Configuration.Load();
+            configurationModel = Configuration.Load(this);
 
             if (!string.IsNullOrWhiteSpace(configurationModel.LifeHotKey))
                 cbLifeHotkey.SelectedItem = configurationModel.LifeHotKey;
@@ -97,6 +98,11 @@ namespace MiniBot
             configurationModel.UseManaAtPercent = (short)nupManaPercent.Value;
 
             Configuration.Save();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Configuration.FindBarsPotision();
         }
     }
 }

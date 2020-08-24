@@ -1,6 +1,6 @@
-﻿using System.Drawing;
+﻿using MiniBot.Domain;
+using System.Drawing;
 using System.Windows.Forms;
-using Util;
 
 namespace MiniBot.Core
 {

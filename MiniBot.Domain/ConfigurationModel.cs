@@ -12,5 +12,9 @@ namespace MiniBot.Core
         public short UseLifeAtPercent { get; set; }
 
         public short UseManaAtPercent { get; set; }
+
+        public bool LifeActice { get; set; }
+
+        public bool ManaActice { get; set; }
     }
 }

@@ -81,6 +81,7 @@
     <Compile Include="Health.cs" />
     <Compile Include="HealthBar.cs" />
     <Compile Include="Mana.cs" />
+    <Compile Include="Pixel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
