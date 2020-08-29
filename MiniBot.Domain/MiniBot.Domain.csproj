@@ -74,13 +74,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BarFinder.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="Colors.cs" />
     <Compile Include="Configuration.cs" />
-    <Compile Include="ConfigurationModel.cs" />
+    <Compile Include="Models\BarPositionModel.cs" />
+    <Compile Include="Models\Configuration\ConfigurationBarModel.cs" />
+    <Compile Include="Models\Configuration\ConfigurationModel.cs" />
     <Compile Include="Health.cs" />
     <Compile Include="HealthBar.cs" />
     <Compile Include="Mana.cs" />
+    <Compile Include="Models\ManaBar.cs" />
     <Compile Include="Pixel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

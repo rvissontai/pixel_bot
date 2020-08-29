@@ -2,6 +2,7 @@
 using System.IO;
 using System.Threading;
 using System.Windows.Forms;
+using MiniBot.Domain.Models;
 using MiniBot.Infra.CrossCutting;
 using Newtonsoft.Json;
 
@@ -14,6 +15,10 @@ namespace MiniBot.Core
         private static ConfigurationModel Instance {get;set; }
 
         private static Form MainForm { get; set; }
+
+        private static BarPositionModel HealthBarPosition { get; set; }
+
+        private static BarPositionModel ManaBarPosition { get; set; }
 
         private Configuration()
         {
@@ -53,14 +58,36 @@ namespace MiniBot.Core
             return Instance;
         }
 
-        public static void FindBarsPotision()
+        public static void FindHealthAndManaBar()
         {
             TibiaClient.SetForeground();
-            Thread.Sleep(250);
+            Thread.Sleep(350);
 
             var screenShot = Screenshot.FullDesktop();
 
-            HealthBar.Find(screenShot);
+            HealthBarPosition = new HealthBar().Find(screenShot);
+            ManaBarPosition   = new ManaBar().Find(screenShot);
+
+            screenShot.Dispose();
+
+            CopyBarsCoordinatesToConfigurationModel();
+
+            Save();
+        }
+
+        private static void CopyBarsCoordinatesToConfigurationModel()
+        {
+            Instance.Health.FirstPixelX = HealthBarPosition.FirstPixelX;
+            Instance.Health.FirstPixelY = HealthBarPosition.FirstPixelY;
+            Instance.Health.LastPixelX = HealthBarPosition.LastPixelX;
+            Instance.Health.LastPixelY = HealthBarPosition.LastPixelY;
+            Instance.Health.SizeInPixels = HealthBarPosition.SizeInPixels;
+
+            Instance.Mana.FirstPixelX = ManaBarPosition.FirstPixelX;
+            Instance.Mana.FirstPixelY = ManaBarPosition.FirstPixelY;
+            Instance.Mana.LastPixelX = ManaBarPosition.LastPixelX;
+            Instance.Mana.LastPixelY = ManaBarPosition.LastPixelY;
+            Instance.Mana.SizeInPixels = ManaBarPosition.SizeInPixels;
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using MiniBot.Core;
 using MiniBot.Infra.CrossCutting;
 using System;
+using System.Threading;
 using System.Windows.Forms;
 using t = System.Timers;
 
@@ -10,6 +11,7 @@ namespace MiniBot
     {
         private t.Timer timerMana;
         private t.Timer timerHealth;
+        private Thread threadFindBars;
         private ConfigurationModel configurationModel;
 
         public Form1()
@@ -69,14 +71,17 @@ namespace MiniBot
         {
             configurationModel = Configuration.Load(this);
 
-            if (!string.IsNullOrWhiteSpace(configurationModel.LifeHotKey))
-                cbLifeHotkey.SelectedItem = configurationModel.LifeHotKey;
+            if (!string.IsNullOrWhiteSpace(configurationModel.Health.HotKey))
+                cbLifeHotkey.SelectedItem = configurationModel.Health.HotKey;
 
-            if (!string.IsNullOrWhiteSpace(configurationModel.ManaHotKey))
-                cbManaHotKey.SelectedItem = configurationModel.ManaHotKey;
+            if (!string.IsNullOrWhiteSpace(configurationModel.Mana.HotKey))
+                cbManaHotKey.SelectedItem = configurationModel.Mana.HotKey;
 
-            nupLifePercent.Value = configurationModel.UseLifeAtPercent;
-            nupManaPercent.Value = configurationModel.UseManaAtPercent;
+            nupLifePercent.Value = configurationModel.Health.UseAtPercent;
+            nupManaPercent.Value = configurationModel.Mana.UseAtPercent;
+
+            cbLifeActive.Checked = configurationModel.Health.Active;
+            cbManaActive.Checked = configurationModel.Mana.Active;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -91,18 +96,26 @@ namespace MiniBot
 
         private void btnSaveConfig_Click(object sender, EventArgs e)
         {
-            configurationModel.LifeHotKey = cbLifeHotkey.SelectedItem.ToString();
-            configurationModel.ManaHotKey = cbManaHotKey.SelectedItem.ToString();
+            configurationModel.Health.HotKey = cbLifeHotkey.SelectedItem.ToString();
+            configurationModel.Health.UseAtPercent = (short)nupLifePercent.Value;
+            configurationModel.Health.Active = cbLifeActive.Checked;
 
-            configurationModel.UseLifeAtPercent = (short)nupLifePercent.Value;
-            configurationModel.UseManaAtPercent = (short)nupManaPercent.Value;
+            configurationModel.Mana.HotKey = cbManaHotKey.SelectedItem.ToString();
+            configurationModel.Mana.UseAtPercent = (short)nupManaPercent.Value;
+            configurationModel.Mana.Active = cbManaActive.Checked;
 
             Configuration.Save();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Configuration.FindBarsPotision();
+            threadFindBars = new Thread(new ThreadStart(FindHealthAndManaBar));
+            threadFindBars.Start();
+        }
+
+        private void FindHealthAndManaBar()
+        {
+            Configuration.FindHealthAndManaBar();
         }
     }
 }

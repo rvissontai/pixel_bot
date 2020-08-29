@@ -12,5 +12,10 @@
         {
             public static readonly string HexFullFirstPixel = "#008900";
         }
+
+        public class ManaBar
+        {
+            public static readonly string HexFullFirstPixel = "#00295b";
+        }
     }
 }

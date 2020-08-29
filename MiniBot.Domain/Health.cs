@@ -16,7 +16,7 @@ namespace MiniBot.Core
                 return;
 
             if (MustUsePotion())
-                SendKeys.Send("{" + Configuration.Settings.LifeHotKey + "}");
+                SendKeys.Send("{" + Configuration.Settings.Health.HotKey + "}");
         }
 
         private static bool MustUsePotion()
