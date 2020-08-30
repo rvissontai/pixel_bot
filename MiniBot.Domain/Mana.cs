@@ -6,7 +6,7 @@ namespace MiniBot.Core
 {
     public class Mana
     {
-        private static Color ColorManaFilled = ColorTranslator.FromHtml(Colors.HexManaBarFilled);
+        private static readonly Color ColorManaFilled = ColorTranslator.FromHtml(Colors.ManaBar.HexFullFirstPixel);
 
         public static void UsePotionOrWait()
         {
@@ -21,9 +21,12 @@ namespace MiniBot.Core
 
         private static bool MustUsePotion()
         {
-            var manaColor = Pixel.GetColor(1390, 35);
+            var colorTargetPixelBasedOnPercent = Pixel.GetColor(
+                Configuration.Settings.Mana.TargetPixelBasedOnPercent, 
+                Configuration.Settings.Mana.LastPixelY
+            );
 
-            if (ColorManaFilled == manaColor)
+            if (ColorManaFilled == colorTargetPixelBasedOnPercent)
                 return false;
 
             return true;

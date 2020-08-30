@@ -94,7 +94,7 @@
             this.cbLifeHotkey.Name = "cbLifeHotkey";
             this.cbLifeHotkey.Size = new System.Drawing.Size(76, 21);
             this.cbLifeHotkey.TabIndex = 1;
-            this.cbLifeHotkey.SelectedIndexChanged += new System.EventHandler(this.cbLifeHotkey_SelectedIndexChanged);
+
             // 
             // label1
             // 

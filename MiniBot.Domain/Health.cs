@@ -6,8 +6,6 @@ namespace MiniBot.Core
 {
     public class Health
     {
-        private static Color ColorHealthBarEmpty = ColorTranslator.FromHtml(Colors.HexHealthBarEmpty);
-
         public static void UsePotionOrWait()
         {
             var tibiaWindowFocused = TibiaClient.IsFocused();
@@ -21,9 +19,18 @@ namespace MiniBot.Core
 
         private static bool MustUsePotion()
         {
-            var healthColor = Pixel.GetColor(700, 28);
+            //A barra de vida muda de cor conforme vai sendo exaurida, validar de acordo com a cor do primeiro pixel.
+            var colorFirstPixelHealthBar = Pixel.GetColor(
+                Configuration.Settings.Health.FirstPixelX,
+                Configuration.Settings.Health.LastPixelY
+            );
 
-            if (ColorHealthBarEmpty != healthColor)
+            var colorTargetPixelBasedOnPercent = Pixel.GetColor(
+                Configuration.Settings.Health.TargetPixelBasedOnPercent, 
+                Configuration.Settings.Health.LastPixelY
+            );
+
+            if (colorFirstPixelHealthBar == colorTargetPixelBasedOnPercent)
                 return false;
 
             return true;

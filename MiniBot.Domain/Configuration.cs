@@ -1,8 +1,8 @@
-﻿using System.ComponentModel;
-using System.IO;
+﻿using System.IO;
 using System.Threading;
 using System.Windows.Forms;
 using MiniBot.Domain.Models;
+using MiniBot.Domain.Models.Configuration;
 using MiniBot.Infra.CrossCutting;
 using Newtonsoft.Json;
 
@@ -38,6 +38,8 @@ namespace MiniBot.Core
 
         public static void Save()
         {
+            CalculateTargetPixel();
+
             using (var sw = new StreamWriter(ConfigFile))
                 sw.Write(JsonConvert.SerializeObject(Instance, Formatting.Indented));
         }
@@ -77,17 +79,23 @@ namespace MiniBot.Core
 
         private static void CopyBarsCoordinatesToConfigurationModel()
         {
-            Instance.Health.FirstPixelX = HealthBarPosition.FirstPixelX;
-            Instance.Health.FirstPixelY = HealthBarPosition.FirstPixelY;
-            Instance.Health.LastPixelX = HealthBarPosition.LastPixelX;
-            Instance.Health.LastPixelY = HealthBarPosition.LastPixelY;
-            Instance.Health.SizeInPixels = HealthBarPosition.SizeInPixels;
+            BindConfigurationBarPositionModel(Instance.Health, HealthBarPosition);
+            BindConfigurationBarPositionModel(Instance.Mana, ManaBarPosition);
+        }
 
-            Instance.Mana.FirstPixelX = ManaBarPosition.FirstPixelX;
-            Instance.Mana.FirstPixelY = ManaBarPosition.FirstPixelY;
-            Instance.Mana.LastPixelX = ManaBarPosition.LastPixelX;
-            Instance.Mana.LastPixelY = ManaBarPosition.LastPixelY;
-            Instance.Mana.SizeInPixels = ManaBarPosition.SizeInPixels;
+        private static void BindConfigurationBarPositionModel(ConfigurationBarModel configurationModel, BarPositionModel barPositionModel)
+        {
+            configurationModel.FirstPixelX  = barPositionModel.FirstPixelX;
+            configurationModel.FirstPixelY  = barPositionModel.FirstPixelY;
+            configurationModel.LastPixelX   = barPositionModel.LastPixelX;
+            configurationModel.LastPixelY   = barPositionModel.LastPixelY;
+            configurationModel.SizeInPixels = barPositionModel.SizeInPixels;
+        }
+
+        private static void CalculateTargetPixel()
+        {
+            Instance.Health.TargetPixelBasedOnPercent = ((Instance.Health.SizeInPixels / 100) * Instance.Health.UseAtPercent) + Instance.Health.FirstPixelX;
+            Instance.Mana.TargetPixelBasedOnPercent = ((Instance.Mana.SizeInPixels / 100) * (100 - Instance.Mana.UseAtPercent)) + Instance.Mana.FirstPixelX;
         }
     }
 }

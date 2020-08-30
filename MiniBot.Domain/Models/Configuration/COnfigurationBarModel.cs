@@ -1,5 +1,8 @@
-﻿namespace MiniBot.Domain.Models.Configuration
+﻿using System;
+
+namespace MiniBot.Domain.Models.Configuration
 {
+    [Serializable]
     public class ConfigurationBarModel
     {
         public int UseAtPercent { get; set; }
@@ -13,5 +16,7 @@
         public int LastPixelY { get; set; }
 
         public int SizeInPixels { get; set; }
+
+        public int TargetPixelBasedOnPercent { get; set; }
     }
 }

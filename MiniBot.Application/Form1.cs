@@ -89,11 +89,6 @@ namespace MiniBot
 
         }
 
-        private void cbLifeHotkey_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
-
         private void btnSaveConfig_Click(object sender, EventArgs e)
         {
             configurationModel.Health.HotKey = cbLifeHotkey.SelectedItem.ToString();
