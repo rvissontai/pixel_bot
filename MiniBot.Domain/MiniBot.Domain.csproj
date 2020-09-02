@@ -72,12 +72,16 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsInput, Version=1.0.6.0, Culture=neutral, PublicKeyToken=de2685b4776e9c2e, processorArchitecture=MSIL">
+      <HintPath>..\packages\InputSimulatorPlus.1.0.7\lib\net20\WindowsInput.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BarFinder.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="Colors.cs" />
     <Compile Include="Configuration.cs" />
+    <Compile Include="KeyBoardSimulator.cs" />
     <Compile Include="Models\BarPositionModel.cs" />
     <Compile Include="Models\Configuration\ConfigurationBarModel.cs" />
     <Compile Include="Models\Configuration\ConfigurationModel.cs" />

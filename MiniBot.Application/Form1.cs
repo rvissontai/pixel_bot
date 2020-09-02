@@ -1,8 +1,11 @@
 ﻿using MiniBot.Core;
+using MiniBot.Domain;
 using MiniBot.Infra.CrossCutting;
 using System;
+using System.Diagnostics;
 using System.Threading;
 using System.Windows.Forms;
+using Util;
 using t = System.Timers;
 
 namespace MiniBot
@@ -11,6 +14,8 @@ namespace MiniBot
     {
         private t.Timer timerMana;
         private t.Timer timerHealth;
+        private t.Timer timerAntiLogout;
+
         private Thread threadFindBars;
         private ConfigurationModel configurationModel;
 
@@ -48,6 +53,17 @@ namespace MiniBot
             catch
             {
             }   
+        }
+
+        private void TimerAntiLogout_Elapsed(object sender, t.ElapsedEventArgs e)
+        {
+            try
+            {
+                Invoke(new Action(() => { new KeyBoardSimulator().MoveCharWithControlArrow(); }));
+            }
+            catch
+            {
+            }
         }
 
         private void InitializeTimers()
@@ -102,7 +118,7 @@ namespace MiniBot
             Configuration.Save();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnFindBars_Click(object sender, EventArgs e)
         {
             threadFindBars = new Thread(new ThreadStart(FindHealthAndManaBar));
             threadFindBars.Start();
@@ -111,6 +127,15 @@ namespace MiniBot
         private void FindHealthAndManaBar()
         {
             Configuration.FindHealthAndManaBar();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            timerAntiLogout = new t.Timer();
+            timerAntiLogout.Interval = TimeSpan.FromMinutes(10).TotalMilliseconds;
+            timerAntiLogout.Elapsed += TimerAntiLogout_Elapsed;
+
+            timerAntiLogout.Start();
         }
     }
 }

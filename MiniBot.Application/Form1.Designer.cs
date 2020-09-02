@@ -41,6 +41,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnSaveConfig = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnFindBars = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -53,8 +54,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.cbLifeActive = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.lbCliente = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pcLife)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupLifePercent)).BeginInit();
@@ -94,7 +94,6 @@
             this.cbLifeHotkey.Name = "cbLifeHotkey";
             this.cbLifeHotkey.Size = new System.Drawing.Size(76, 21);
             this.cbLifeHotkey.TabIndex = 1;
-
             // 
             // label1
             // 
@@ -190,6 +189,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.groupBox1.Controls.Add(this.btnFindBars);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.checkBox1);
             this.groupBox1.Controls.Add(this.label8);
@@ -218,6 +218,16 @@
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Settings";
+            // 
+            // btnFindBars
+            // 
+            this.btnFindBars.Location = new System.Drawing.Point(6, 169);
+            this.btnFindBars.Name = "btnFindBars";
+            this.btnFindBars.Size = new System.Drawing.Size(225, 23);
+            this.btnFindBars.TabIndex = 1;
+            this.btnFindBars.Text = "Find HP and Mana bars";
+            this.btnFindBars.UseVisualStyleBackColor = true;
+            this.btnFindBars.Click += new System.EventHandler(this.btnFindBars_Click);
             // 
             // label7
             // 
@@ -334,8 +344,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Controls.Add(this.lbCliente);
+            this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Location = new System.Drawing.Point(257, 12);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(237, 245);
@@ -343,24 +352,15 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Info";
             // 
-            // lbCliente
+            // button2
             // 
-            this.lbCliente.AutoSize = true;
-            this.lbCliente.Location = new System.Drawing.Point(7, 20);
-            this.lbCliente.Name = "lbCliente";
-            this.lbCliente.Size = new System.Drawing.Size(36, 13);
-            this.lbCliente.TabIndex = 0;
-            this.lbCliente.Text = "Client:";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(77, 56);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button2.Location = new System.Drawing.Point(7, 33);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 0;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form1
             // 
@@ -385,7 +385,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -409,7 +408,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.CheckBox cbLifeActive;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label lbCliente;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label8;
@@ -417,7 +415,8 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnFindBars;
+        private System.Windows.Forms.Button button2;
     }
 }
 
