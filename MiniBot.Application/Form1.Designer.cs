@@ -41,6 +41,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnSaveConfig = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbAntiLogout = new System.Windows.Forms.CheckBox();
             this.btnFindBars = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
@@ -178,7 +179,7 @@
             // 
             // btnSaveConfig
             // 
-            this.btnSaveConfig.Location = new System.Drawing.Point(6, 198);
+            this.btnSaveConfig.Location = new System.Drawing.Point(6, 264);
             this.btnSaveConfig.Name = "btnSaveConfig";
             this.btnSaveConfig.Size = new System.Drawing.Size(225, 41);
             this.btnSaveConfig.TabIndex = 11;
@@ -189,6 +190,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.groupBox1.Controls.Add(this.cbAntiLogout);
             this.groupBox1.Controls.Add(this.btnFindBars);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.checkBox1);
@@ -214,14 +216,25 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(239, 245);
+            this.groupBox1.Size = new System.Drawing.Size(239, 311);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Settings";
             // 
+            // cbAntiLogout
+            // 
+            this.cbAntiLogout.AutoSize = true;
+            this.cbAntiLogout.Location = new System.Drawing.Point(50, 186);
+            this.cbAntiLogout.Name = "cbAntiLogout";
+            this.cbAntiLogout.Size = new System.Drawing.Size(110, 17);
+            this.cbAntiLogout.TabIndex = 23;
+            this.cbAntiLogout.Text = "Ativar Anti Logout";
+            this.cbAntiLogout.UseVisualStyleBackColor = true;
+            this.cbAntiLogout.CheckedChanged += new System.EventHandler(this.cbAntiLogout_CheckedChanged);
+            // 
             // btnFindBars
             // 
-            this.btnFindBars.Location = new System.Drawing.Point(6, 169);
+            this.btnFindBars.Location = new System.Drawing.Point(6, 235);
             this.btnFindBars.Name = "btnFindBars";
             this.btnFindBars.Size = new System.Drawing.Size(225, 23);
             this.btnFindBars.TabIndex = 1;
@@ -366,7 +379,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(506, 269);
+            this.ClientSize = new System.Drawing.Size(506, 335);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -417,6 +430,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnFindBars;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.CheckBox cbAntiLogout;
     }
 }
 

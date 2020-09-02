@@ -75,6 +75,10 @@ namespace MiniBot
             timerHealth = new t.Timer();
             timerHealth.Interval = 333;
             timerHealth.Elapsed += TimerHealth_Elapsed;
+
+            timerAntiLogout = new t.Timer();
+            timerAntiLogout.Interval = TimeSpan.FromMinutes(10).TotalMilliseconds;
+            timerAntiLogout.Elapsed += TimerAntiLogout_Elapsed;
         }
 
         private void StartTimers()
@@ -131,11 +135,17 @@ namespace MiniBot
 
         private void button2_Click(object sender, EventArgs e)
         {
-            timerAntiLogout = new t.Timer();
-            timerAntiLogout.Interval = TimeSpan.FromMinutes(10).TotalMilliseconds;
-            timerAntiLogout.Elapsed += TimerAntiLogout_Elapsed;
+            
 
             timerAntiLogout.Start();
+        }
+
+        private void cbAntiLogout_CheckedChanged(object sender, EventArgs e)
+        {
+            timerAntiLogout.Stop();
+
+            if (cbAntiLogout.Checked)
+                timerAntiLogout.Start();
         }
     }
 }
