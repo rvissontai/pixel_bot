@@ -4,11 +4,18 @@ using System.Windows.Forms;
 
 namespace MiniBot.Core
 {
-    public class Mana
+    public class Mana : IMana
     {
-        private static readonly Color ColorManaFilled = ColorTranslator.FromHtml(Colors.ManaBar.HexFullFirstPixel);
+        public IPixel Pixel { get; private set; }
 
-        public static void UsePotionOrWait()
+        private readonly Color ColorManaFilled = ColorTranslator.FromHtml(Colors.ManaBar.HexFullFirstPixel);
+
+        public Mana(IPixel pixel)
+        {
+            Pixel = pixel;
+        }
+
+        public void UsePotionOrWait()
         {
             var tibiaWindowFocused = TibiaClient.IsFocused();
 
@@ -19,10 +26,10 @@ namespace MiniBot.Core
                 SendKeys.Send("{" + Configuration.Settings.Mana.HotKey + "}");
         }
 
-        private static bool MustUsePotion()
+        public bool MustUsePotion()
         {
             var colorTargetPixelBasedOnPercent = Pixel.GetColor(
-                Configuration.Settings.Mana.TargetPixelBasedOnPercent, 
+                Configuration.Settings.Mana.TargetPixelBasedOnPercent,
                 Configuration.Settings.Mana.LastPixelY
             );
 

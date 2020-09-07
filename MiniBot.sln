@@ -17,6 +17,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Domain", "2 - Domain", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Infra", "3 - Infra", "{14283453-14A0-4A24-8683-5E8E2B775600}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniBot.Infra.CrossCutting.Pinvoke", "MiniBot.Infra.CrossCutting.Pinvoke\MiniBot.Infra.CrossCutting.Pinvoke.csproj", "{72DFB062-C9F8-4CA8-90CD-662939B15550}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{FF873FB1-5E45-4AD9-B767-1805AE94C717}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF873FB1-5E45-4AD9-B767-1805AE94C717}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF873FB1-5E45-4AD9-B767-1805AE94C717}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72DFB062-C9F8-4CA8-90CD-662939B15550}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72DFB062-C9F8-4CA8-90CD-662939B15550}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72DFB062-C9F8-4CA8-90CD-662939B15550}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72DFB062-C9F8-4CA8-90CD-662939B15550}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,6 +52,7 @@ Global
 		{906787A6-B605-40C8-9CCF-CB59A93766E6} = {C3BFA740-A331-4150-9137-203C208CBDAE}
 		{79104FBB-4CBA-44A7-9B01-09F6C33B6CA9} = {C3BFA740-A331-4150-9137-203C208CBDAE}
 		{14283453-14A0-4A24-8683-5E8E2B775600} = {C3BFA740-A331-4150-9137-203C208CBDAE}
+		{72DFB062-C9F8-4CA8-90CD-662939B15550} = {14283453-14A0-4A24-8683-5E8E2B775600}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {76470A04-C8BE-4392-9916-108975FC346B}

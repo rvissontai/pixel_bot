@@ -1,6 +1,6 @@
 ﻿namespace MiniBot
 {
-    partial class Form1
+    partial class FormPrincipal
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             this.pcLife = new System.Windows.Forms.PictureBox();
             this.cbLifeHotkey = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -360,14 +360,14 @@
             this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Location = new System.Drawing.Point(257, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(237, 245);
+            this.groupBox2.Size = new System.Drawing.Size(237, 305);
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Info";
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(7, 33);
+            this.button2.Location = new System.Drawing.Point(156, 273);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 0;

@@ -10,7 +10,7 @@ using t = System.Timers;
 
 namespace MiniBot
 {
-    public partial class Form1 : Form
+    public partial class FormPrincipal : Form
     {
         private t.Timer timerMana;
         private t.Timer timerHealth;
@@ -19,8 +19,12 @@ namespace MiniBot
         private Thread threadFindBars;
         private ConfigurationModel configurationModel;
 
-        public Form1()
+        private IMana Mana { get; set; }
+
+        public FormPrincipal(IMana mana)
         {
+            Mana = mana;
+
             InitializeComponent();
 
             TibiaClient.FindTibiaClientProcess();

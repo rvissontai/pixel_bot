@@ -7,11 +7,11 @@ namespace MiniBot.Core
 {
     public class TibiaClient
     {
-        public static Process TibiaProcess;
+        public static Process Process;
 
         public static void FindTibiaClientProcess()
         {
-            TibiaProcess = Process.GetProcessesByName("client")[0];
+            Process = Process.GetProcessesByName("client")[0];
         }
 
         public static bool IsFocused()
@@ -26,13 +26,13 @@ namespace MiniBot.Core
 
             User32.GetWindowThreadProcessId(activatedHandle, out activeProcId);
 
-            return activeProcId == TibiaProcess.Id;
+            return activeProcId == Process.Id;
         }
 
         public static void SetForeground()
         {
-            User32.SetForegroundWindow(TibiaProcess.MainWindowHandle);
-            User32.SetActiveWindow(TibiaProcess.MainWindowHandle);
+            User32.SetForegroundWindow(Process.MainWindowHandle);
+            User32.SetActiveWindow(Process.MainWindowHandle);
         }
     }
 }

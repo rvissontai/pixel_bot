@@ -4,9 +4,9 @@ using Util;
 
 namespace MiniBot.Domain
 {
-    public class Pixel
+    public class Pixel : IPixel
     {
-        public static Color GetColor(int x, int y)
+        public Color GetColor(int x, int y)
         {
             IntPtr hdc = User32.GetDC(IntPtr.Zero);
             uint pixel = Gdi32.GetPixel(hdc, x, y);

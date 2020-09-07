@@ -20,12 +20,12 @@ namespace MiniBot.Core
         private static bool MustUsePotion()
         {
             //A barra de vida muda de cor conforme vai sendo exaurida, validar de acordo com a cor do primeiro pixel.
-            var colorFirstPixelHealthBar = Pixel.GetColor(
+            var colorFirstPixelHealthBar = new Pixel().GetColor(
                 Configuration.Settings.Health.FirstPixelX,
                 Configuration.Settings.Health.LastPixelY
             );
 
-            var colorTargetPixelBasedOnPercent = Pixel.GetColor(
+            var colorTargetPixelBasedOnPercent = new Pixel().GetColor(
                 Configuration.Settings.Health.TargetPixelBasedOnPercent, 
                 Configuration.Settings.Health.LastPixelY
             );

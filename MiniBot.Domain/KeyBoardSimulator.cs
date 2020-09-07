@@ -30,7 +30,7 @@ namespace MiniBot.Domain
             }
             else
             {
-                User32.PostMessage(TibiaClient.TibiaProcess.MainWindowHandle, WM_KEYDOWN, VK_F3, 0);
+                User32.PostMessage(TibiaClient.Process.MainWindowHandle, WM_KEYDOWN, VK_F3, 0);
             }
             
         }
